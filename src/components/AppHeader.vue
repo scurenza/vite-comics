@@ -5,7 +5,7 @@ export default {
         return {
             logo: {
                 title: "header-logo",
-                src: "../assets/img/dc-logo.png"
+                logoName: "dc-logo.png"
             },
             links: [
                 {
@@ -52,6 +52,11 @@ export default {
                 },
             ]
         }
+    },
+    methods: {
+        getImagePath: function(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
+        }
     }
 }
 </script>
@@ -60,9 +65,53 @@ export default {
 
     <header class="header">
         <div class="logo">
-            <img :src='logo.src' :alt='logo.title'>
+            <img :src="getImagePath(`../assets/img/${logo.logoName}`)" :alt='logo.title'>
+        </div>
+        <div class="list">
+            <ul>
+                <li v-for="(link, index) in links" :key="index" >
+                <a :class="{ 'active': link.active }" :href="link.href" @mouseover="link.active = true" @mouseleave="link.active = false">{{ link.title }}</a>
+                </li>
+                
+            </ul>
         </div>
     </header>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+@use "../styles/partials/_mixins.scss" as *;
+@use "../styles/partials/_variables.scss" as *;
+
+header{
+    @include flex-sb-center;
+
+    width: 70%;
+    height: $header-height;
+    margin: 0 auto;
+    padding: 1rem 0;
+
+    ul {
+        @include flex-sb-center;
+        li {
+            
+            margin-right: 1rem;
+            height: calc($header-height - 4px);
+
+            a {
+                display: flex;
+                align-items: center;
+                height: 100%;
+            }
+            .active{
+                color: $primary-color;
+                border-bottom: 6px solid $primary-color;
+            }
+            
+        }
+    }
+
+
+}
+
+
+</style>

@@ -17,17 +17,19 @@
 </script>
 
 <template>
-
   <AppHeader />
   <MainContent />
   <AppBanner />
   <AppList />
   <AppList />
-
 </template>
 
 <style lang="scss">
 
 @use "./styles/general.scss" as *;
 
+#app {
+  width: 100%;
+  height: 100vh;
+}
 </style>
