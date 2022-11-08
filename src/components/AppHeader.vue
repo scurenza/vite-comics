@@ -88,19 +88,22 @@ header{
     width: 70%;
     height: $header-height;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 1rem .5rem;
 
     ul {
         @include flex-sb-center;
         li {
             
-            margin-right: 1rem;
-            height: calc($header-height - 4px);
+            margin-right: 2rem;
+            height: $header-height;
 
             a {
                 display: flex;
                 align-items: center;
                 height: 100%;
+
+                font-size: .8rem;
+                font-weight: 600;
             }
             .active{
                 color: $primary-color;
