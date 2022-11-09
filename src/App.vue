@@ -21,7 +21,7 @@
   <MainContent />
   <AppBanner />
   <AppList />
-  <AppList />
+  <AppFooter />
 </template>
 
 <style lang="scss">

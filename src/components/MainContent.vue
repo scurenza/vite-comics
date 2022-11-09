@@ -1,4 +1,5 @@
 <script>
+import ItemCard from './ItemCard.vue';
 export default {
     name: "MainContent",
     components: {
@@ -89,7 +90,7 @@ export default {
     <main>
         <section class="main-content">
             <div class="row">
-                <ItemCard />
+                <ItemCard v-for="(item, index) in items" :key="index" :title="item.series" :ImgSrc="item.thumb" :price="item.price"/>
             </div>
         </section>
     </main>
@@ -101,7 +102,7 @@ export default {
 
 main {
     min-height: 200px;
-    background-color: black;
+    // background-color: black;
 
     .main-content {
         width: 80%;

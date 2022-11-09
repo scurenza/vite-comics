@@ -3,7 +3,7 @@ export default {
     name: "ItemCard",
     props: {
         title: String,
-        src: String,
+        ImgSrc: String,
         price: String
     }
 }
@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div class="card">
-        <img :src="src" :alt="title">
+        <img :src="ImgSrc" :alt="title">
         <div class="card-text">
             <div class="title">
                 <h4>{{ title }}</h4>
@@ -27,5 +27,6 @@ export default {
 <style lang="scss" scoped>
 .card{
     width: calc(100% / 6 - 10px);
+    margin: 10px;
 }
 </style>
