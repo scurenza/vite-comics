@@ -27,6 +27,19 @@ export default {
 <style lang="scss" scoped>
 .card{
     width: calc(100% / 6 - 10px);
-    margin: 10px;
+    // height: 150px;
+    margin: 40px 0px;
+    cursor: pointer;
+
+    img {
+        height: 125px;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    &-text{
+        color: white;
+    }
 }
 </style>

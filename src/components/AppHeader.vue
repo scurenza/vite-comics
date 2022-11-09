@@ -64,6 +64,7 @@ export default {
 <template>
 
     <header class="header">
+        <div class="container">
         <div class="logo">
             <img :src="getImagePath(`../assets/img/${logo.logoName}`)" :alt='logo.title'>
         </div>
@@ -75,6 +76,7 @@ export default {
                 
             </ul>
         </div>
+    </div>
     </header>
 </template>
 
@@ -83,13 +85,21 @@ export default {
 @use "../styles/partials/_variables.scss" as *;
 
 header{
-    @include flex-sb-center;
+    width: 100%;
+    background-color: white;
+    
 
-    width: 70%;
-    height: $header-height;
-    margin: 0 auto;
-    padding: 1rem .5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
 
+    .container{
+        height: $header-height;
+        width: 70%;
+        margin: 0 auto;
+        @include flex-sb-center;
+    }
     ul {
         @include flex-sb-center;
         li {

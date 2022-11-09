@@ -92,6 +92,13 @@ export default {
             <div class="row">
                 <ItemCard v-for="(item, index) in items" :key="index" :title="item.series" :ImgSrc="item.thumb" :price="item.price"/>
             </div>
+            <div class="btn">
+                <a href="">
+                    <button>
+                        LOAD MORE 
+                    </button>
+                </a>
+            </div>
         </section>
     </main>
 </template>
@@ -101,16 +108,36 @@ export default {
 @use "../styles/partials/_variables.scss" as *;
 
 main {
-    min-height: 200px;
-    // background-color: black;
+    min-height: 300px;
+    background-color: black;
+    margin-top: $header-height;
 
     .main-content {
-        width: 80%;
+        width: 70%;
         // height: 100%;
         margin: 0 auto;
+        padding: .1rem 0 .9rem;
+        // display: flex;
+        // align-items: center;
 
-        display: flex;
-        align-items: center;
+        .row{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .btn{
+            text-align: center;
+            margin-bottom: 1rem; 
+        }
+
+        button{
+            padding: .8rem 3rem;
+            background-color: $primary-color;
+            color: white;
+
+            font-weight: 600;
+        }
     }
 }
 
