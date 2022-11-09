@@ -70,15 +70,18 @@ export default {
     height: $banner-height;
 
     background-color: $primary-color;
+    
 
     &-content{
         width: 70%;
         margin: 0 auto;
+        
     }
 
     ul {
         @include flex-sb-center;
         padding: 0 3rem;
+        
         li {
             height: $banner-height;
             width: calc(100% / 5 - 1rem);
@@ -90,6 +93,7 @@ export default {
                 height: $banner-height;
                 display: flex;
                 align-items: center;
+                z-index: 5;
             }
 
             img {

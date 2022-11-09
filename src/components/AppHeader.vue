@@ -94,6 +94,9 @@ header{
     left: 0;
     z-index: 5;
 
+    img{
+        width: 75px;
+    }
     .container{
         height: $header-height;
         width: 70%;
